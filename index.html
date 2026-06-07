@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CurveCare | Cuidando das curvas, valorizando histórias</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --roxo:#8c49e6; --roxo2:#6d33bd; --lilas:#f3e8ff; --lilas2:#ead6ff;
+      --grafite:#17131f; --grafite2:#251b31; --texto:#23152f; --muted:#74657e;
+      --branco:#fff; --linha:#eadff4; --verde:#7fa344; --shadow:0 22px 60px rgba(37,27,49,.14);
+      --radius:26px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,Arial,sans-serif;color:var(--texto);background:#fff;line-height:1.55;overflow-x:hidden}
+    a{text-decoration:none;color:inherit} img{display:block;max-width:100%}
+    .topbar{background:linear-gradient(90deg,#28133b,#8c49e6);color:#fff;height:auto;min-height:38px;display:flex;align-items:center;justify-content:center;gap:32px;padding:8px 20px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;flex-wrap:wrap}
+    .header{position:sticky;top:0;z-index:99;background:rgba(255,255,255,.94);backdrop-filter:blur(18px);border-bottom:1px solid var(--linha);display:flex;align-items:center;justify-content:space-between;padding:10px 5vw;gap:20px}
+    .logo img{width:170px;height:66px;object-fit:contain;filter:drop-shadow(0 8px 12px rgba(140,73,230,.15))}
+    nav{display:flex;align-items:center;gap:24px;font-size:.86rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em}
+    nav a{position:relative;padding:8px 0} nav a:after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--roxo);transition:.25s} nav a:hover:after{width:100%}
+    .whats{display:inline-flex;align-items:center;gap:8px;border-radius:999px;background:linear-gradient(135deg,var(--roxo),var(--roxo2));color:white;padding:13px 22px;font-weight:900;box-shadow:0 14px 32px rgba(140,73,230,.28);white-space:nowrap}
+    .menu{display:none;border:0;background:var(--lilas);color:var(--roxo2);font-size:1.7rem;border-radius:14px;padding:8px 12px}
+
+    .hero{position:relative;min-height:660px;background:radial-gradient(circle at 20% 30%,#f7eaff 0,#fff 34%,#21162d 34%,#110d18 100%);overflow:hidden;display:grid;grid-template-columns:1fr;align-items:stretch}
+    .hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(245,229,255,.95) 0%,rgba(242,220,255,.75) 37%,rgba(23,19,31,.88) 62%,rgba(23,19,31,.96) 100%)}
+    .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;opacity:.9;mix-blend-mode:normal}
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.84) 0%,rgba(243,232,255,.48) 38%,rgba(23,19,31,.2) 62%,rgba(23,19,31,.62) 100%)}
+    .hero-content{position:relative;z-index:2;width:min(1200px,90vw);margin:auto;display:grid;grid-template-columns:minmax(320px,520px) 1fr;align-items:center;min-height:660px}
+    .hero-copy{padding:40px 0 80px}.hero .tag{font-size:.8rem;text-transform:uppercase;letter-spacing:.28em;color:var(--roxo2);font-weight:900;margin-bottom:18px}.hero h1{font-family:"Playfair Display",serif;font-size:clamp(3rem,7vw,6.2rem);line-height:.92;color:#28133b;margin-bottom:22px}.hero h1 span{display:block;color:var(--roxo);font-style:italic;font-weight:600}.hero p{font-size:1.08rem;color:#4a3b56;max-width:460px;margin-bottom:28px}.hero-actions{display:flex;gap:14px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:14px 24px;font-weight:900;transition:.25s;border:1px solid transparent}.btn:hover{transform:translateY(-3px)}.btn-primary{background:linear-gradient(135deg,var(--roxo),var(--roxo2));color:#fff;box-shadow:0 18px 38px rgba(140,73,230,.27)}.btn-outline{background:rgba(255,255,255,.75);border-color:rgba(109,51,189,.35);color:#301b42;backdrop-filter:blur(8px)}
+
+    .quick{width:min(1180px,90vw);margin:-52px auto 0;position:relative;z-index:5;background:linear-gradient(90deg,#22142e,#8c49e6);border-radius:24px;display:grid;grid-template-columns:repeat(4,1fr);overflow:hidden;box-shadow:var(--shadow);color:white}.quick article{padding:24px;display:flex;gap:14px;align-items:center;border-right:1px solid rgba(255,255,255,.14)}.quick article:last-child{border-right:0}.quick i{font-style:normal;font-size:2rem}.quick strong{display:block;text-transform:uppercase;font-size:.82rem;letter-spacing:.07em}.quick p{font-size:.82rem;opacity:.86;margin-top:2px}
+
+    section{padding:86px 5vw}.wrap{width:min(1180px,100%);margin:0 auto}.eyebrow{text-align:center;color:var(--roxo);font-size:.78rem;font-weight:900;text-transform:uppercase;letter-spacing:.26em;margin-bottom:12px}.title{font-family:"Playfair Display",serif;font-size:clamp(2.2rem,4vw,4rem);line-height:1.05;text-align:center;color:#2a1739;margin-bottom:16px}.intro{max-width:780px;margin:0 auto 42px;text-align:center;color:var(--muted);font-size:1rem}
+
+    .prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.prod{position:relative;min-height:330px;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:var(--grafite)}.prod img{width:100%;height:100%;min-height:330px;object-fit:cover}.prod:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(38,18,54,.92),rgba(140,73,230,.45),rgba(255,255,255,.03))}.prod:nth-child(2):after{background:linear-gradient(90deg,rgba(14,12,18,.94),rgba(54,37,69,.58),rgba(0,0,0,.03))}.prod-content{position:absolute;z-index:2;left:28px;bottom:26px;right:22px;color:white}.prod h3{font-size:1.6rem;margin-bottom:9px}.prod p{font-size:.94rem;max-width:300px;margin-bottom:18px}.prod a{display:inline-flex;background:#fff;color:#321a47;border-radius:999px;padding:10px 18px;font-weight:900;font-size:.82rem}
+
+    .services{background:linear-gradient(180deg,#fff,#fbf7ff 70%,#fff)}.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}.svc{background:#fff;border:1px solid var(--linha);border-radius:24px;overflow:hidden;box-shadow:0 18px 44px rgba(37,27,49,.09);transition:.25s}.svc:hover{transform:translateY(-6px);box-shadow:var(--shadow)}.svc img{height:175px;width:100%;object-fit:cover}.svc div{padding:22px}.svc h3{font-size:1.18rem;color:#301b42;margin-bottom:8px}.svc p{font-size:.92rem;color:var(--muted)}
+
+    .about{background:linear-gradient(135deg,#17131f 0%,#2a1739 52%,#8c49e6 160%);color:#fff;position:relative;overflow:hidden}.about:before{content:"";position:absolute;inset:-30%;background:radial-gradient(circle at 18% 10%,rgba(140,73,230,.5),transparent 28%),radial-gradient(circle at 90% 70%,rgba(234,214,255,.18),transparent 30%)}.about .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1.1fr;gap:42px;align-items:start}.about .eyebrow,.about .title{text-align:left}.about .title{color:#fff}.about p{color:#e7dcf0}.mvv{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.mvv article{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:22px;backdrop-filter:blur(12px)}.mvv span{font-size:2rem}.mvv h3{margin:12px 0 8px;color:#fff}.mvv p{font-size:.9rem;color:#e9ddf2}
+
+    .mix-sustain{display:grid;grid-template-columns:1fr 1fr;gap:26px}.panel{border-radius:30px;padding:34px;box-shadow:var(--shadow);border:1px solid var(--linha);background:#fff}.panel.dark{background:linear-gradient(135deg,#1a1124,#3b2151);color:#fff;border:0}.panel h2{font-family:"Playfair Display",serif;font-size:2.2rem;margin-bottom:20px;color:inherit}.list{display:grid;gap:14px}.list article{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start}.list span{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:var(--lilas);color:var(--roxo);font-size:1.3rem}.panel.dark .list span{background:rgba(255,255,255,.12);color:#fff}.list strong{display:block;margin-bottom:2px}.list p{font-size:.92rem;color:var(--muted)}.panel.dark .list p{color:#e4d7ed}.seal{margin-top:22px;background:#f2f8ea;border:1px solid #dbe9cf;border-radius:24px;padding:24px;display:flex;align-items:center;gap:18px}.seal-badge{min-width:110px;height:110px;border:3px solid var(--verde);border-radius:50%;display:grid;place-items:center;color:var(--verde);font-weight:900;text-align:center;font-size:.82rem;background:#fff}.seal h3{color:#354b21;margin-bottom:4px}.seal p{color:#647154;font-size:.92rem}
+
+    .team{background:linear-gradient(180deg,#fff,#f8f0ff)}.team-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:18px}.person{text-align:center;background:#fff;border:1px solid var(--linha);border-radius:24px;padding:14px 12px 18px;box-shadow:0 14px 34px rgba(37,27,49,.08);transition:.25s}.person:hover{transform:translateY(-5px)}.person img{width:100%;aspect-ratio:1/1.15;object-fit:cover;border-radius:18px;margin-bottom:14px;object-position:center top}.person h3{font-size:.94rem;color:#2a1739;line-height:1.18}.person p{font-size:.78rem;color:var(--roxo2);font-weight:800;margin-top:5px}
+
+    .contact{padding:0 5vw 84px;background:#f8f0ff}.contact-box{width:min(1180px,100%);margin:auto;display:grid;grid-template-columns:1fr 1fr;background:linear-gradient(135deg,#8c49e6,#2a1739);color:white;border-radius:32px;overflow:hidden;box-shadow:var(--shadow)}.contact-info{padding:44px}.contact-info h2{font-family:"Playfair Display",serif;font-size:2.6rem;margin-bottom:14px}.contact-info p{color:#eee0f9;margin-bottom:24px}.contact-list{display:grid;gap:13px;color:#fff;font-weight:700}.cta-card{background:rgba(255,255,255,.1);padding:44px;display:grid;align-content:center}.cta-card h3{font-size:1.8rem;margin-bottom:12px}.cta-card p{color:#eee0f9;margin-bottom:22px}.cta-card .btn{background:white;color:#2a1739;width:max-content}
+
+    footer{background:#130e1c;color:#d9cde4;padding:46px 5vw 20px}.foot{width:min(1180px,100%);margin:auto;display:grid;grid-template-columns:1.3fr 1fr 1fr 1.2fr;gap:30px}.foot-logo{width:160px;margin-bottom:14px}.foot h4{color:#fff;margin-bottom:12px}.foot a,.foot p{display:block;color:#d9cde4;font-size:.9rem;margin-bottom:8px}.copy{width:min(1180px,100%);margin:28px auto 0;border-top:1px solid rgba(255,255,255,.12);padding-top:18px;display:flex;justify-content:space-between;font-size:.84rem;color:#b9abc7}
+
+    .float-whats{position:fixed;right:24px;bottom:24px;z-index:100;width:62px;height:62px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;font-size:2rem;box-shadow:0 18px 36px rgba(0,0,0,.22)}
+
+    @media(max-width:1050px){nav{display:none}.menu{display:block}.header.open nav{display:flex;position:absolute;top:86px;left:5vw;right:5vw;background:#fff;border:1px solid var(--linha);border-radius:22px;box-shadow:var(--shadow);padding:22px;flex-direction:column;align-items:flex-start}.hero-content{grid-template-columns:1fr}.quick,.svc-grid{grid-template-columns:repeat(2,1fr)}.prod-grid,.about .wrap,.mix-sustain,.contact-box{grid-template-columns:1fr}.team-grid{grid-template-columns:repeat(4,1fr)}}
+    @media(max-width:680px){.topbar{gap:10px;font-size:.65rem}.logo img{width:132px}.header{padding:8px 4vw}.header .whats{display:none}.hero{min-height:560px}.hero-content{min-height:560px;width:90vw}.hero h1{font-size:3.1rem}.hero-img{opacity:.42;object-position:65% top}.hero-overlay{background:linear-gradient(90deg,rgba(255,255,255,.9),rgba(243,232,255,.78))}.quick,.svc-grid,.team-grid{grid-template-columns:1fr}.quick{margin-top:0;border-radius:0;width:100%}.prod-grid{grid-template-columns:1fr}section{padding:64px 5vw}.mvv{grid-template-columns:1fr}.mix-sustain{gap:18px}.foot{grid-template-columns:1fr}.copy{flex-direction:column;gap:8px}.contact{padding:0 0 64px}.contact-box{border-radius:0}.contact-info,.cta-card{padding:32px 5vw}}
+  </style>
+</head>
+<body>
+  <div class="topbar"><span>Atendimento especializado</span><span>Envio para todo o Sudeste</span><span>Unidade física no RJ</span></div>
+  <header class="header" id="topo">
+    <a class="logo" href="#topo"><img src="assets/logo.png" alt="CurveCare"></a>
+    <button class="menu" onclick="document.querySelector('.header').classList.toggle('open')">☰</button>
+    <nav>
+      <a href="#topo">Início</a><a href="#produtos">Produtos</a><a href="#servicos">Serviços</a><a href="#sobre">Sobre Nós</a><a href="#sustentabilidade">Sustentabilidade</a><a href="#equipe">Equipe</a><a href="#contato">Contato</a>
+    </nav>
+    <a class="whats" href="https://wa.me/5521999999999" target="_blank">💬 Falar no WhatsApp</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img class="hero-img" src="assets/ChatGPT Image 5 de jun. de 2026, 22_08_31.png" alt="Banner CurveCare com modelos diversos usando cintas">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="hero-copy">
+          <div class="tag">Beleza, conforto e confiança</div>
+          <h1>Cada curva <span>importa.</span></h1>
+          <p>Cintas modeladoras, pós-operatórias, modeladores masculinos e serviços estéticos para cuidar da autoestima em cada etapa.</p>
+          <div class="hero-actions"><a class="btn btn-primary" href="#produtos">Conhecer produtos</a><a class="btn btn-outline" href="https://wa.me/5521999999999" target="_blank">Falar no WhatsApp</a></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="quick">
+      <article><i>🚚</i><div><strong>Entregamos no Sudeste</strong><p>RJ, SP, MG e ES</p></div></article>
+      <article><i>📍</i><div><strong>Unidade física no RJ</strong><p>Atendimento presencial</p></div></article>
+      <article><i>🎧</i><div><strong>Atendimento especializado</strong><p>Orientação personalizada</p></div></article>
+      <article><i>💳</i><div><strong>Condições facilitadas</strong><p>Compra segura</p></div></article>
+    </div>
+
+    <section id="produtos">
+      <div class="wrap">
+        <p class="eyebrow">Para todos os corpos</p>
+        <h2 class="title">Encontre a cinta ideal para você</h2>
+        <p class="intro">Produtos pensados para conforto, sustentação e autoestima, atendendo diferentes necessidades: modelagem, rotina e recuperação pós-operatória.</p>
+        <div class="prod-grid">
+          <article class="prod"><img src="assets/modelo fem.jpeg" alt="Linha feminina"><div class="prod-content"><h3>Linha Feminina</h3><p>Modelagem, conforto e sustentação para valorizar suas curvas.</p><a href="https://wa.me/5521999999999" target="_blank">Ver produtos</a></div></article>
+          <article class="prod"><img src="assets/modelo homem.jpeg" alt="Linha masculina"><div class="prod-content"><h3>Linha Masculina</h3><p>Discrição, postura e suporte para a rotina com confiança.</p><a href="https://wa.me/5521999999999" target="_blank">Ver produtos</a></div></article>
+          <article class="prod"><img src="assets/modelo op.jpeg" alt="Pós-operatório"><div class="prod-content"><h3>Pós-operatório</h3><p>Recuperação com segurança, conforto e suporte para o corpo.</p><a href="https://wa.me/5521999999999" target="_blank">Ver produtos</a></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="servicos">
+      <div class="wrap">
+        <p class="eyebrow">Cuidados que vão além da cinta</p>
+        <h2 class="title">Serviços estéticos</h2>
+        <p class="intro">Além dos produtos, a CurveCare conta com atendimento físico no Rio de Janeiro para procedimentos estéticos e orientação personalizada.</p>
+        <div class="svc-grid">
+          <article class="svc"><img src="assets/drenagem.jpg" alt="Drenagem linfática"><div><h3>Drenagem Linfática</h3><p>Auxilia na redução de inchaços, melhora da circulação e recuperação pós-operatória.</p></div></article>
+          <article class="svc"><img src="assets/massagem.png" alt="Massagem modeladora"><div><h3>Massagem Modeladora</h3><p>Auxilia na definição corporal, melhora da circulação e valorização dos contornos.</p></div></article>
+          <article class="svc"><img src="assets/avaliacao.jpg" alt="Avaliação personalizada"><div><h3>Avaliação Personalizada</h3><p>Atendimento individual para indicar a cinta, serviço ou protocolo mais adequado.</p></div></article>
+          <article class="svc"><img src="assets/unidade.jpg" alt="Unidade física"><div><h3>Unidade Física</h3><p>Ambiente acolhedor no Rio de Janeiro para atendimento estético e acompanhamento.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="sobre">
+      <div class="wrap">
+        <div>
+          <p class="eyebrow">Sobre a CurveCare</p>
+          <h2 class="title">CurveCare: cuidando das curvas, valorizando histórias.</h2>
+          <p>A CurveCare nasceu com o propósito de oferecer conforto, recuperação e autoestima por meio de produtos e serviços especializados. Atuamos inicialmente com vendas online para toda a região Sudeste e atendimento presencial no Rio de Janeiro, unindo cintas modeladoras, pós-operatórias e serviços estéticos.</p>
+        </div>
+        <div class="mvv">
+          <article><span>🎯</span><h3>Missão</h3><p>Promover bem-estar, autoestima e qualidade de vida por meio de produtos e serviços que acolhem, cuidam e transformam.</p></article>
+          <article><span>👁️</span><h3>Visão</h3><p>Ser referência no Sudeste em soluções para o corpo, unindo tecnologia, humanização e sustentabilidade.</p></article>
+          <article><span>💎</span><h3>Valores</h3><p>Respeito, empatia, qualidade, segurança, inovação, sustentabilidade e compromisso com resultados.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="sustentabilidade">
+      <div class="wrap mix-sustain">
+        <div class="panel dark">
+          <h2>Mix de Marketing</h2>
+          <div class="list">
+            <article><span>🛍️</span><div><strong>Produto</strong><p>Cintas modeladoras, pós-operatórias, modeladores masculinos e serviços estéticos.</p></div></article>
+            <article><span>💜</span><div><strong>Preço</strong><p>Condições acessíveis, pagamento facilitado e percepção de valor pelo atendimento.</p></div></article>
+            <article><span>📦</span><div><strong>Praça</strong><p>Vendas online para o Sudeste e unidade física no Rio de Janeiro.</p></div></article>
+            <article><span>📲</span><div><strong>Promoção</strong><p>Instagram, WhatsApp, conteúdos educativos, atendimento humanizado e campanhas sazonais.</p></div></article>
+          </div>
+        </div>
+        <div class="panel">
+          <h2>Sustentabilidade</h2>
+          <div class="list">
+            <article><span>♻️</span><div><strong>Embalagens recicláveis</strong><p>Uso de embalagens que reduzem impactos ambientais.</p></div></article>
+            <article><span>🌿</span><div><strong>Produtos duráveis</strong><p>Peças resistentes que geram menos descarte e mais economia.</p></div></article>
+            <article><span>📱</span><div><strong>Atendimento digital</strong><p>Menos papel, mais tecnologia e praticidade para o cliente.</p></div></article>
+            <article><span>🤝</span><div><strong>Ação social</strong><p>Apoio a ações que promovem saúde, autoestima e inclusão.</p></div></article>
+          </div>
+          <div class="seal"><div class="seal-badge">CURVECARE<br>ECO<br>CHOICE</div><div><h3>Selo CurveCare Eco Choice</h3><p>Nosso compromisso com o planeta e com as futuras gerações.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="team" id="equipe">
+      <div class="wrap">
+        <p class="eyebrow">As mulheres por trás da CurveCare</p>
+        <h2 class="title">Nossa equipe</h2>
+        <div class="team-grid">
+          <article class="person"><img src="assets/andressa.jpg" alt="Andressa Beatriz"><h3>Andressa Beatriz de Jesus Costa</h3><p>Coordenadora de Logística</p></article>
+          <article class="person"><img src="assets/annelysie.jpg" alt="Annelysie Monteiro"><h3>Annelysie Monteiro Ambrósio</h3><p>Especialista em Estética</p></article>
+          <article class="person"><img src="assets/bruna.jpg" alt="Bruna Samarah"><h3>Bruna Samarah Dantas Bezerra</h3><p>Gestora de Produtos e Qualidade</p></article>
+          <article class="person"><img src="assets/gilvania.jpg" alt="Gilvania da Silva"><h3>Gilvania da Silva Santana</h3><p>Diretora Administrativa e Gestão Geral</p></article>
+          <article class="person"><img src="assets/gisele.jpg" alt="Gisele de Almada"><h3>Gisele de Almada Pereira</h3><p>Analista Financeira</p></article>
+          <article class="person"><img src="assets/karen.jpg" alt="Karen Ferreira"><h3>Karen Ferreira de Andrade</h3><p>Consultora de Atendimento e Vendas</p></article>
+          <article class="person"><img src="assets/vitoria.png" alt="Vitória Alves"><h3>Vitória Alves de Morais</h3><p>Analista de Marketing Digital</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contato">
+      <div class="contact-box">
+        <div class="contact-info">
+          <h2>Estamos no Rio de Janeiro</h2>
+          <p>Atendimento presencial para serviços estéticos e consultoria personalizada. Envio de produtos para todo o Sudeste.</p>
+          <div class="contact-list"><span>📍 Rua das Curvas, 123 - Rio de Janeiro/RJ</span><span>📞 (21) 99999-9999</span><span>✉️ contato@curvecare.com.br</span><span>🕘 Seg a Sex: 08h às 18h | Sáb: 09h às 13h</span></div>
+        </div>
+        <div class="cta-card">
+          <h3>Dúvidas? Chame no WhatsApp!</h3>
+          <p>Atendimento rápido, humanizado e personalizado para indicar a melhor opção para você.</p>
+          <a class="btn" href="https://wa.me/5521999999999" target="_blank">💬 Falar no WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="foot">
+      <div><img class="foot-logo" src="assets/logo.png" alt="CurveCare"><p>Cuidando das curvas, valorizando histórias.</p></div>
+      <div><h4>Navegação</h4><a href="#topo">Início</a><a href="#produtos">Produtos</a><a href="#servicos">Serviços</a><a href="#sobre">Sobre Nós</a></div>
+      <div><h4>Categorias</h4><a href="#produtos">Linha Feminina</a><a href="#produtos">Linha Masculina</a><a href="#produtos">Pós-operatório</a><a href="#servicos">Serviços Estéticos</a></div>
+      <div><h4>Contato</h4><p>WhatsApp: (21) 99999-9999</p><p>E-mail: contato@curvecare.com.br</p><p>Entrega: Sudeste</p></div>
+    </div>
+    <div class="copy"><span>© 2026 CurveCare. Todos os direitos reservados.</span><span>Desenvolvido com carinho para valorizar histórias.</span></div>
+  </footer>
+  <a class="float-whats" href="https://wa.me/5521999999999" target="_blank" aria-label="WhatsApp">☘</a>
+</body>
+</html>
