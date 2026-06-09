@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Produtos | CurveCare</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --roxo:#8c49e6; --roxo2:#6d33bd; --lilas:#f3e8ff; --lilas2:#ead6ff;
+      --grafite:#17131f; --grafite2:#251b31; --texto:#23152f; --muted:#74657e;
+      --branco:#fff; --linha:#eadff4; --shadow:0 22px 60px rgba(37,27,49,.14);
+      --radius:26px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Inter,Arial,sans-serif;color:var(--texto);background:#fff;line-height:1.55}
+    a{text-decoration:none;color:inherit}
+    
+    /* Topo igual ao principal */
+    .topbar{background:linear-gradient(90deg,#28133b,#8c49e6);color:#fff;min-height:38px;display:flex;align-items:center;justify-content:center;gap:32px;padding:8px 20px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;flex-wrap:wrap}
+    .header{position:sticky;top:0;z-index:99;background:rgba(255,255,255,.94);backdrop-filter:blur(18px);border-bottom:1px solid var(--linha);display:flex;align-items:center;justify-content:space-between;padding:10px 5vw;gap:20px}
+    .logo img{width:170px;height:120px;object-fit:contain}
+    nav{display:flex;align-items:center;gap:24px;font-size:.86rem;font-weight:800;text-transform:uppercase}
+    nav a{position:relative;padding:8px 0}
+    .whats{display:inline-flex;align-items:center;gap:8px;border-radius:999px;background:linear-gradient(135deg,var(--roxo),var(--roxo2));color:white;padding:13px 22px;font-weight:900}
+
+    /* Seção de produtos */
+    section{padding:60px 5vw}
+    .wrap{width:min(1180px,100%);margin:0 auto}
+    .title{font-family:"Playfair Display",serif;font-size:3rem;text-align:center;color:#2a1739;margin-bottom:40px}
+
+    /* Filtros */
+    .filtros-container { display: flex; gap: 20px; justify-content: center; align-items: center; background: var(--lilas); padding: 20px; border-radius: 18px; margin-bottom: 40px; flex-wrap: wrap; }
+    .filtro-item { display: flex; flex-direction: column; gap: 6px; font-weight: 700; font-size: 0.9rem; }
+    .filtro-item select, .filtro-item input { padding: 10px 16px; border-radius: 10px; border: 1px solid var(--linha); background: white; outline: none; }
+
+    /* Grid e Cards */
+    .prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .prod-card { background: white; border: 1px solid var(--linha); border-radius: var(--radius); overflow: hidden; box-shadow: 0 10px 30px rgba(37,27,49,.06); display: flex; flex-direction: column; }
+    
+    /* Carrossel */
+    .carrossel-container { position: relative; width: 100%; height: 320px; background: #f0f0f0; }
+    .carrossel-container img { width: 100%; height: 100%; object-fit: cover; }
+    .btn-carrossel { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.85); border: none; color: var(--roxo); width: 36px; height: 36px; border-radius: 50%; font-weight: bold; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 5; }
+    .btn-prev { left: 12px; } .btn-next { right: 12px; }
+    
+    .prod-info { padding: 22px; display: flex; flex-direction: column; flex-grow: 1; }
+    .prod-meta { font-size: 0.8rem; color: var(--muted); margin-bottom: 12px; text-transform: uppercase; font-weight: 700; }
+    .prod-info h3 { font-size: 1.3rem; margin-bottom: 6px; color: var(--grafite2); }
+    .prod-preco { font-size: 1.5rem; font-weight: 900; color: var(--roxo); margin-bottom: 16px; margin-top: auto; }
+    .btn-comprar { background: linear-gradient(135deg,var(--roxo),var(--roxo2)); color: white; text-align: center; padding: 12px; border-radius: 999px; font-weight: 800; }
+
+    footer{background:#130e1c;color:#d9cde4;padding:46px 5vw 20px;margin-top:60px}
+    .foot{width:min(1180px,100%);margin:auto;display:grid;grid-template-columns:1.3fr 1fr 1fr 1.2fr;gap:30px}
+    .foot h4{color:#fff;margin-bottom:12px}
+
+    @media(max-width:1050px){.prod-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:680px){.prod-grid{grid-template-columns:1fr}.foot{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="topbar"><span>Atendimento especializado</span><span>Envio para todo o Sudeste</span><span>Unidade física no RJ</span></div>
+  <header class="header">
+    <a class="logo" href="index.html"><img src="assets/logo.png" alt="CurveCare"></a>
+    <nav>
+      <a href="index.html">Início</a><a href="produtos.html">Produtos</a><a href="index.html#servicos">Serviços</a><a href="index.html#sobre">Sobre Nós</a><a href="index.html#contato">Contato</a>
+    </nav>
+    <a class="whats" href="https://wa.me/5521999999999" target="_blank">💬 Falar no WhatsApp</a>
+  </header>
+
+  <main>
+    <section>
+      <div class="wrap">
+        <h1 class="title">Nosso Catálogo</h1>
+        
+        <!-- Filtros -->
+        <div class="filtros-container">
+          <div class="filtro-item">
+            <label for="filtro-categoria">Categoria:</label>
+            <select id="filtro-categoria">
+              <option value="todos">Todas as Linhas</option>
+              <option value="feminina">Linha Feminina</option>
+              <option value="masculina">Linha Masculina</option>
+              <option value="pos-operatorio">Pós-operatório</option>
+            </select>
+          </div>
+          <div class="filtro-item">
+            <label for="filtro-tamanho">Tamanho:</label>
+            <select id="filtro-tamanho">
+              <option value="todos">Todos</option>
+              <option value="P">P</option>
+              <option value="M">M</option>
+              <option value="G">G</option>
+              <option value="GG">GG</option>
+              <option value="PP">PP</option>
+            </select>
+          </div>
+          <div class="filtro-item">
+            <label for="filtro-preco">Preço Máximo: R$ <span id="val-preco">350</span></label>
+            <input type="range" id="filtro-preco" min="240" max="350" value="300" step="10">
+          </div>
+        </div>
+
+        <!-- Onde o JS vai desenhar os produtos -->
+        <div class="prod-grid" id="grid-produtos-dinamico"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="foot">
+      <div><h4>CurveCare</h4><p>Cuidando das curvas, valorizando histórias.</p></div>
+      <div><h4>Navegação</h4><a href="index.html">Início</a><a href="produtos.html">Produtos</a></div>
+      <div><h4>Categorias</h4><a href="produtos.html?cat=feminina">Linha Feminina</a><a href="produtos.html?cat=masculina">Linha Masculina</a></div>
+      <div><h4>Contato</h4><p>WhatsApp: (21) 99999-9999</p></div>
+    </div>
+  </footer>
+
+  <script>
+    //produtos cadastrados
+    const listaProdutos = [
+      { id: 1, nome: "Cinta Modeladora", categoria: "feminina", tamanho: ["P","PP","M", "G"], preco: 325.00, imagens: ["assets/cintamodeladora.jpeg", "assets/cintamodeladorabege.jpeg", "assets/modelo fem.jpeg"], imgAtual: 0 },
+      { id: 2, nome: "Colete Modelador Postural", categoria: "masculina", tamanho: ["M", "G", "GG"], preco: 349.00, imagens: ["assets/camisacompreMasculina.jpeg", "assets/modeloHomecompress.jpeg"], imgAtual: 0 },
+      { id: 3, nome: "cinta Pós-Cirúrgico", categoria: "pos-operatorio", tamanho: ["GG", "G", "M"], preco: 239.90, imagens: ["assets/posOperatoriamasculina.jpeg", "assets/posOperatoriapreto.jpeg", "assets/posfeminina.jpeg", "assets/modeloposope.jpeg", "assets/modeloHomemplussize.jpeg"], imgAtual: 0 },
+    ];
+
+    const gridProdutos = document.getElementById("grid-produtos-dinamico");
+    const filtroCategoria = document.getElementById("filtro-categoria");
+    const filtroTamanho = document.getElementById("filtro-tamanho");
+    const filtroPreco = document.getElementById("filtro-preco");
+    const valPrecoLabel = document.getElementById("val-preco");
+
+    function renderizarProdutos(produtosParaExibir) {
+      gridProdutos.innerHTML = "";
+      if (produtosParaExibir.length === 0) {
+        gridProdutos.innerHTML = `<p style="grid-column:1/-1; text-align:center; color:var(--muted); padding:40px;">Nenhum produto encontrado.</p>`;
+        return;
+      }
+      produtosParaExibir.forEach(produto => {
+        const card = document.createElement("article");
+        card.className = "prod-card";
+        card.innerHTML = `
+          <div class="carrossel-container">
+            <button class="btn-carrossel btn-prev" onclick="mudarFoto(${produto.id}, -1)">❮</button>
+            <img id="img-prod-${produto.id}" src="${produto.imagens[produto.imgAtual]}" alt="${produto.nome}">
+            <button class="btn-carrossel btn-next" onclick="mudarFoto(${produto.id}, 1)">❯</button>
+          </div>
+          <div class="prod-info">
+            <span class="prod-meta">Tam: ${produto.tamanho} | ${produto.categoria}</span>
+            <h3>${produto.nome}</h3>
+            <div class="prod-preco">R$ ${produto.preco.toFixed(2).replace('.', ',')}</div>
+            <a href="https://wa.me/5521999999999?text=Olá! Quero saber mais sobre o produto: ${produto.nome}" target="_blank" class="btn-comprar">Gostei, Quero Comprar</a>
+          </div>
+        `;
+        gridProdutos.appendChild(card);
+      });
+    }
+
+    window.mudarFoto = function(idProduto, direcao) {
+      const produto = listaProdutos.find(p => p.id === idProduto);
+      if (produto) {
+        produto.imgAtual += direcao;
+        if (produto.imgAtual >= produto.imagens.length) produto.imgAtual = 0;
+        if (produto.imgAtual < 0) produto.imgAtual = produto.imagens.length - 1;
+        document.getElementById(`img-prod-${idProduto}`).src = produto.imagens[produto.imgAtual];
+      }
+    }
+
+   function aplicarFiltros() {
+      const cat = filtroCategoria.value;
+      const tam = filtroTamanho.value;
+      const precoMax = parseFloat(filtroPreco.value);
+      valPrecoLabel.textContent = precoMax;
+
+      const filtrados = listaProdutos.filter(prod => {
+        const bateCat = cat === "todos" || prod.categoria === cat;
+        const batePreco = prod.preco <= precoMax;
+        
+        const bateTam = tam === "todos" || prod.tamanhos.includes(tam);
+
+        return bateCat && bateTam && batePreco;
+      });
+      
+      renderizarProdutos(filtrados);
+    }
+
+    filtroCategoria.addEventListener("change", aplicarFiltros);
+    filtroTamanho.addEventListener("change", aplicarFiltros);
+    filtroPreco.addEventListener("input", aplicarFiltros);
+
+    // Inteligência para abrir já na categoria selecionada na página inicial
+    const params = new URLSearchParams(window.location.search);
+    const catInicial = params.get('cat');
+    if (catInicial) {
+      filtroCategoria.value = catInicial;
+    }
+    aplicarFiltros();
+  </script>
+</body>
+</html>

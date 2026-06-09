@@ -20,7 +20,7 @@
     a{text-decoration:none;color:inherit} img{display:block;max-width:100%}
     .topbar{background:linear-gradient(90deg,#28133b,#8c49e6);color:#fff;height:auto;min-height:38px;display:flex;align-items:center;justify-content:center;gap:32px;padding:8px 20px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;flex-wrap:wrap}
     .header{position:sticky;top:0;z-index:99;background:rgba(255,255,255,.94);backdrop-filter:blur(18px);border-bottom:1px solid var(--linha);display:flex;align-items:center;justify-content:space-between;padding:10px 5vw;gap:20px}
-    .logo img{width:170px;height:66px;object-fit:contain;filter:drop-shadow(0 8px 12px rgba(140,73,230,.15))}
+    .logo img{width:170px;height:120px;object-fit:contain;filter:drop-shadow(0 8px 12px rgba(140,73,230,.15))}
     nav{display:flex;align-items:center;gap:24px;font-size:.86rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em}
     nav a{position:relative;padding:8px 0} nav a:after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--roxo);transition:.25s} nav a:hover:after{width:100%}
     .whats{display:inline-flex;align-items:center;gap:8px;border-radius:999px;background:linear-gradient(135deg,var(--roxo),var(--roxo2));color:white;padding:13px 22px;font-weight:900;box-shadow:0 14px 32px rgba(140,73,230,.28);white-space:nowrap}
@@ -63,7 +63,7 @@
     <a class="logo" href="#topo"><img src="assets/logo.png" alt="CurveCare"></a>
     <button class="menu" onclick="document.querySelector('.header').classList.toggle('open')">☰</button>
     <nav>
-      <a href="#topo">Início</a><a href="#produtos">Produtos</a><a href="#servicos">Serviços</a><a href="#sobre">Sobre Nós</a><a href="#sustentabilidade">Sustentabilidade</a><a href="#equipe">Equipe</a><a href="#contato">Contato</a>
+      <a href="#topo">Início</a><a href="produtos.html">Produtos</a><a href="#servicos">Serviços</a><a href="#sobre">Sobre Nós</a><a href="#sustentabilidade">Sustentabilidade</a><a href="#equipe">Equipe</a><a href="#contato">Contato</a>
     </nav>
     <a class="whats" href="https://wa.me/5521999999999" target="_blank">💬 Falar no WhatsApp</a>
   </header>
@@ -83,7 +83,7 @@
     </section>
 
     <div class="quick">
-      <article><i>🚚</i><div><strong>Entregamos no Sudeste</strong><p>RJ, SP, MG e ES</p></div></article>
+      <article><i>🚚</i><div><strong>Entregamos na região sudeste</strong><p>RJ, SP, MG e ES</p></div></article>
       <article><i>📍</i><div><strong>Unidade física no RJ</strong><p>Atendimento presencial</p></div></article>
       <article><i>🎧</i><div><strong>Atendimento especializado</strong><p>Orientação personalizada</p></div></article>
       <article><i>💳</i><div><strong>Condições facilitadas</strong><p>Compra segura</p></div></article>
@@ -95,9 +95,9 @@
         <h2 class="title">Encontre a cinta ideal para você</h2>
         <p class="intro">Produtos pensados para conforto, sustentação e autoestima, atendendo diferentes necessidades: modelagem, rotina e recuperação pós-operatória.</p>
         <div class="prod-grid">
-          <article class="prod"><img src="assets/modelo fem.jpeg" alt="Linha feminina"><div class="prod-content"><h3>Linha Feminina</h3><p>Modelagem, conforto e sustentação para valorizar suas curvas.</p><a href="https://wa.me/5521999999999" target="_blank">Ver produtos</a></div></article>
-          <article class="prod"><img src="assets/modelo homem.jpeg" alt="Linha masculina"><div class="prod-content"><h3>Linha Masculina</h3><p>Discrição, postura e suporte para a rotina com confiança.</p><a href="https://wa.me/5521999999999" target="_blank">Ver produtos</a></div></article>
-          <article class="prod"><img src="assets/modelo op.jpeg" alt="Pós-operatório"><div class="prod-content"><h3>Pós-operatório</h3><p>Recuperação com segurança, conforto e suporte para o corpo.</p><a href="https://wa.me/5521999999999" target="_blank">Ver produtos</a></div></article>
+          <article class="prod"><img src="assets/modelo fem.jpeg" alt="Linha feminina"><div class="prod-content"><h3>Linha Feminina</h3><p>Modelagem, conforto e sustentação para valorizar suas curvas.</p><a href="produtos.html">Ver produtos</a></div></article>
+          <article class="prod"><img src="assets/modelo homem.jpeg" alt="Linha masculina"><div class="prod-content"><h3>Linha Masculina</h3><p>Discrição, postura e suporte para a rotina com confiança.</p><a href="produtos.html">Ver produtos</a></div></article>
+          <article class="prod"><img src="assets/modelo op.jpeg" alt="Pós-operatório"><div class="prod-content"><h3>Pós-operatório</h3><p>Recuperação com segurança, conforto e suporte para o corpo.</p><a href="produtos.html">Ver produtos</a></div></article>
         </div>
       </div>
     </section>
@@ -105,7 +105,7 @@
     <section class="services" id="servicos">
       <div class="wrap">
         <p class="eyebrow">Cuidados que vão além da cinta</p>
-        <h2 class="title">Serviços estéticos</h2>
+        <h2 class="title">Serviços estéticos presencial</h2>
         <p class="intro">Além dos produtos, a CurveCare conta com atendimento físico no Rio de Janeiro para procedimentos estéticos e orientação personalizada.</p>
         <div class="svc-grid">
           <article class="svc"><img src="assets/drenagem.jpg" alt="Drenagem linfática"><div><h3>Drenagem Linfática</h3><p>Auxilia na redução de inchaços, melhora da circulação e recuperação pós-operatória.</p></div></article>
@@ -160,13 +160,13 @@
         <p class="eyebrow">As mulheres por trás da CurveCare</p>
         <h2 class="title">Nossa equipe</h2>
         <div class="team-grid">
-          <article class="person"><img src="assets/andressa.jpg" alt="Andressa Beatriz"><h3>Andressa Beatriz de Jesus Costa</h3><p>Coordenadora de Logística</p></article>
-          <article class="person"><img src="assets/annelysie.jpg" alt="Annelysie Monteiro"><h3>Annelysie Monteiro Ambrósio</h3><p>Especialista em Estética</p></article>
-          <article class="person"><img src="assets/bruna.jpg" alt="Bruna Samarah"><h3>Bruna Samarah Dantas Bezerra</h3><p>Gestora de Produtos e Qualidade</p></article>
-          <article class="person"><img src="assets/gilvania.jpg" alt="Gilvania da Silva"><h3>Gilvania da Silva Santana</h3><p>Diretora Administrativa e Gestão Geral</p></article>
-          <article class="person"><img src="assets/gisele.jpg" alt="Gisele de Almada"><h3>Gisele de Almada Pereira</h3><p>Analista Financeira</p></article>
-          <article class="person"><img src="assets/karen.jpg" alt="Karen Ferreira"><h3>Karen Ferreira de Andrade</h3><p>Consultora de Atendimento e Vendas</p></article>
-          <article class="person"><img src="assets/vitoria.png" alt="Vitória Alves"><h3>Vitória Alves de Morais</h3><p>Analista de Marketing Digital</p></article>
+          <article class="person"><img src="assets/andressa.jpg" alt="Andressa Beatriz"><h3>Andressa Costa</h3><p>Coordenadora de Logística</p></article>
+          <article class="person"><img src="assets/annelysie.jpeg" alt="Annelysie Monteiro"><h3>Annelysie Ambrósio</h3><p>Especialista em Estética</p></article>
+          <article class="person"><img src="assets/bruna.jpg" alt="Bruna Samarah"><h3>Bruna Dantas</h3><p>Gestora de Produtos e Qualidade</p></article>
+          <article class="person"><img src="assets/gilvania.jpg" alt="Gilvania da Silva"><h3>Gilvania Santana</h3><p>Diretora Administrativa e Gestão Geral</p></article>
+          <article class="person"><img src="assets/gisele.jpg" alt="Gisele de Almada"><h3>Gisele de Almada</h3><p>Analista Financeira</p></article>
+          <article class="person"><img src="assets/karen.jpg" alt="Karen Ferreira"><h3>Karen Andrade</h3><p>Consultora de Atendimento e Vendas</p></article>
+          <article class="person"><img src="assets/vitoria.png" alt="Vitória Alves"><h3>Vitória Morais</h3><p>Analista de Marketing Digital</p></article>
         </div>
       </div>
     </section>
@@ -190,7 +190,7 @@
   <footer>
     <div class="foot">
       <div><img class="foot-logo" src="assets/logo.png" alt="CurveCare"><p>Cuidando das curvas, valorizando histórias.</p></div>
-      <div><h4>Navegação</h4><a href="#topo">Início</a><a href="#produtos">Produtos</a><a href="#servicos">Serviços</a><a href="#sobre">Sobre Nós</a></div>
+      <div><h4>Navegação</h4><a href="#topo">Início</a><a href="produtos.html">Produtos</a><a href="#servicos">Serviços</a><a href="#sobre">Sobre Nós</a></div>
       <div><h4>Categorias</h4><a href="#produtos">Linha Feminina</a><a href="#produtos">Linha Masculina</a><a href="#produtos">Pós-operatório</a><a href="#servicos">Serviços Estéticos</a></div>
       <div><h4>Contato</h4><p>WhatsApp: (21) 99999-9999</p><p>E-mail: contato@curvecare.com.br</p><p>Entrega: Sudeste</p></div>
     </div>
