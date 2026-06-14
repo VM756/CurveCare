@@ -20,7 +20,7 @@
     a{text-decoration:none;color:inherit} img{display:block;max-width:100%}
     .topbar{background:linear-gradient(90deg,#28133b,#8c49e6);color:#fff;height:auto;min-height:38px;display:flex;align-items:center;justify-content:center;gap:32px;padding:8px 20px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;flex-wrap:wrap}
     .header{position:sticky;top:0;z-index:99;background:rgba(255,255,255,.94);backdrop-filter:blur(18px);border-bottom:1px solid var(--linha);display:flex;align-items:center;justify-content:space-between;padding:10px 5vw;gap:20px}
-    .logo img{width:170px;height:120px;object-fit:contain;filter:drop-shadow(0 8px 12px rgba(140,73,230,.15))}
+    .logo img{width:170px;height:120px;object-fit:contain;filter:none(0 8px 12px rgba(140,73,230,.15))}
     nav{display:flex;align-items:center;gap:24px;font-size:.86rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em}
     nav a{position:relative;padding:8px 0} nav a:after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--roxo);transition:.25s} nav a:hover:after{width:100%}
     .whats{display:inline-flex;align-items:center;gap:8px;border-radius:999px;background:linear-gradient(135deg,var(--roxo),var(--roxo2));color:white;padding:13px 22px;font-weight:900;box-shadow:0 14px 32px rgba(140,73,230,.28);white-space:nowrap}
@@ -41,9 +41,7 @@
 
     .services{background:linear-gradient(180deg,#fff,#fbf7ff 70%,#fff)}.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}.svc{background:#fff;border:1px solid var(--linha);border-radius:24px;overflow:hidden;box-shadow:0 18px 44px rgba(37,27,49,.09);transition:.25s}.svc:hover{transform:translateY(-6px);box-shadow:var(--shadow)}.svc img{height:175px;width:100%;object-fit:cover}.svc div{padding:22px}.svc h3{font-size:1.18rem;color:#301b42;margin-bottom:8px}.svc p{font-size:.92rem;color:var(--muted)}
 
-    .about{background:linear-gradient(135deg,#17131f 0%,#2a1739 52%,#8c49e6 160%);color:#fff;position:relative;overflow:hidden}.about:before{content:"";position:absolute;inset:-30%;background:radial-gradient(circle at 18% 10%,rgba(140,73,230,.5),transparent 28%),radial-gradient(circle at 90% 70%,rgba(234,214,255,.18),transparent 30%)}.about .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1.1fr;gap:42px;align-items:start}.about .eyebrow,.about .title{text-align:left}.about .title{color:#fff}.about p{color:#e7dcf0}.mvv{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.mvv article{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:22px;backdrop-filter:blur(12px)}.mvv span{font-size:2rem}.mvv h3{margin:12px 0 8px;color:#fff}.mvv p{font-size:.9rem;color:#e9ddf2}
-
-    .mix-sustain{display:grid;grid-template-columns:1fr 1fr;gap:26px}.panel{border-radius:30px;padding:34px;box-shadow:var(--shadow);border:1px solid var(--linha);background:#fff}.panel.dark{background:linear-gradient(135deg,#1a1124,#3b2151);color:#fff;border:0}.panel h2{font-family:"Playfair Display",serif;font-size:2.2rem;margin-bottom:20px;color:inherit}.list{display:grid;gap:14px}.list article{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start}.list span{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:var(--lilas);color:var(--roxo);font-size:1.3rem}.panel.dark .list span{background:rgba(255,255,255,.12);color:#fff}.list strong{display:block;margin-bottom:2px}.list p{font-size:.92rem;color:var(--muted)}.panel.dark .list p{color:#e4d7ed}.seal{margin-top:22px;background:#f2f8ea;border:1px solid #dbe9cf;border-radius:24px;padding:24px;display:flex;align-items:center;gap:18px}.seal-badge{min-width:110px;height:110px;border:3px solid var(--verde);border-radius:50%;display:grid;place-items:center;color:var(--verde);font-weight:900;text-align:center;font-size:.82rem;background:#fff}.seal h3{color:#354b21;margin-bottom:4px}.seal p{color:#647154;font-size:.92rem}
+    .about{background:linear-gradient(135deg,#17131f 0%,#2a1739 52%,#8c49e6 160%);color:#fff;position:relative;overflow:hidden}.about:before{content:"";position:absolute;inset:-30%;background:radial-gradient(circle at 18% 10%,rgba(140,73,230,.5),transparent 28%),radial-gradient(circle at 90% 70%,rgba(234,214,255,.18),transparent 30%)}.about .wrap{position:relative;z-index:2;display:flex;flex-direction: column;align-items: center;text-align: center;max-width: 800px;margin: 0 auto;}.about .eyebrow,.about .title{text-align:center}.about .title{color:#fff}.about p{color:#e7dcf0}.mvv{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.mvv article{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:22px;backdrop-filter:blur(12px)}.mvv span{font-size:2rem}.mvv h3{margin:12px 0 8px;color:#fff}.mvv p{font-size:.9rem;color:#e9ddf2}
 
     .team{background:linear-gradient(180deg,#fff,#f8f0ff)}.team-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:18px}.person{text-align:center;background:#fff;border:1px solid var(--linha);border-radius:24px;padding:14px 12px 18px;box-shadow:0 14px 34px rgba(37,27,49,.08);transition:.25s}.person:hover{transform:translateY(-5px)}.person img{width:100%;aspect-ratio:1/1.15;object-fit:cover;border-radius:18px;margin-bottom:14px;object-position:center top}.person h3{font-size:.94rem;color:#2a1739;line-height:1.18}.person p{font-size:.78rem;color:var(--roxo2);font-weight:800;margin-top:5px}
 
@@ -51,7 +49,62 @@
 
     footer{background:#130e1c;color:#d9cde4;padding:46px 5vw 20px}.foot{width:min(1180px,100%);margin:auto;display:grid;grid-template-columns:1.3fr 1fr 1fr 1.2fr;gap:30px}.foot-logo{width:160px;margin-bottom:14px}.foot h4{color:#fff;margin-bottom:12px}.foot a,.foot p{display:block;color:#d9cde4;font-size:.9rem;margin-bottom:8px}.copy{width:min(1180px,100%);margin:28px auto 0;border-top:1px solid rgba(255,255,255,.12);padding-top:18px;display:flex;justify-content:space-between;font-size:.84rem;color:#b9abc7}
 
-    .float-whats{position:fixed;right:24px;bottom:24px;z-index:100;width:62px;height:62px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;font-size:2rem;box-shadow:0 18px 36px rgba(0,0,0,.22)}
+.whatsapp-float {
+  position: fixed;
+  right: 24px;
+  bottom: 100px; 
+  z-index: 9999;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #25d366;
+  display: flex;
+  place-items: center;
+  padding: 14px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+}
+.whatsapp:hover { transform: scale(1.1); }
+
+.float-insta {
+  position: fixed;
+  right: 24px;
+  bottom: 24px; 
+  z-index: 9999;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  display: flex;
+  place-items: center;
+  padding: 14px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+}
+.float-insta:hover { transform: scale(1.1); }
+
+.infrogafico-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border-radius: 32px;
+  overflow: hidden ;
+  box-shadow: (--shadow);
+  border: 1px solid var(--Linha);
+  padding: 10px;
+}
+.infrografico-container img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 22px;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1); 
+}
 
     @media(max-width:1050px){nav{display:none}.menu{display:block}.header.open nav{display:flex;position:absolute;top:86px;left:5vw;right:5vw;background:#fff;border:1px solid var(--linha);border-radius:22px;box-shadow:var(--shadow);padding:22px;flex-direction:column;align-items:flex-start}.hero-content{grid-template-columns:1fr}.quick,.svc-grid{grid-template-columns:repeat(2,1fr)}.prod-grid,.about .wrap,.mix-sustain,.contact-box{grid-template-columns:1fr}.team-grid{grid-template-columns:repeat(4,1fr)}}
     @media(max-width:680px){.topbar{gap:10px;font-size:.65rem}.logo img{width:132px}.header{padding:8px 4vw}.header .whats{display:none}.hero{min-height:560px}.hero-content{min-height:560px;width:90vw}.hero h1{font-size:3.1rem}.hero-img{opacity:.42;object-position:65% top}.hero-overlay{background:linear-gradient(90deg,rgba(255,255,255,.9),rgba(243,232,255,.78))}.quick,.svc-grid,.team-grid{grid-template-columns:1fr}.quick{margin-top:0;border-radius:0;width:100%}.prod-grid{grid-template-columns:1fr}section{padding:64px 5vw}.mvv{grid-template-columns:1fr}.mix-sustain{gap:18px}.foot{grid-template-columns:1fr}.copy{flex-direction:column;gap:8px}.contact{padding:0 0 64px}.contact-box{border-radius:0}.contact-info,.cta-card{padding:32px 5vw}}
@@ -70,13 +123,13 @@
 
   <main>
     <section class="hero">
-      <img class="hero-img" src="assets/ChatGPT Image 5 de jun. de 2026, 22_08_31.png" alt="Banner CurveCare com modelos diversos usando cintas">
+      <img class="hero-img" src="assets/WhatsApp Image 2026-06-11 at 00.22.50.jpeg" alt="Banner CurveCare com modelos diversos usando cintas">
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <div class="hero-copy">
           <div class="tag">Beleza, conforto e confiança</div>
           <h1>Cada curva <span>importa.</span></h1>
-          <p>Cintas modeladoras, pós-operatórias, modeladores masculinos e serviços estéticos para cuidar da autoestima em cada etapa.</p>
+          <p>Especialistas em cintas modeladoras, pós-operatórias e serviços estéticos para homens e mulheres que buscam conforto, bem-estar e autoestima.</p>
           <div class="hero-actions"><a class="btn btn-primary" href="#produtos">Conhecer produtos</a><a class="btn btn-outline" href="https://wa.me/5521999999999" target="_blank">Falar no WhatsApp</a></div>
         </div>
       </div>
@@ -120,37 +173,26 @@
       <div class="wrap">
         <div>
           <p class="eyebrow">Sobre a CurveCare</p>
-          <h2 class="title">CurveCare: cuidando das curvas, valorizando histórias.</h2>
-          <p>A CurveCare nasceu com o propósito de oferecer conforto, recuperação e autoestima por meio de produtos e serviços especializados. Atuamos inicialmente com vendas online para toda a região Sudeste e atendimento presencial no Rio de Janeiro, unindo cintas modeladoras, pós-operatórias e serviços estéticos.</p>
+          <h2 class="title">cuidando das curvas, valorizando histórias.</h2>
+          <p>A CurveCare nasceu do desejo de suas sócias de oferecer mais conforto, autoestima e segurança para pessoas que buscam se sentir bem consigo mesmas em todas as etapas de sua jornada.</p><br><p>Acreditamos que cada transformação é única e merece ser acompanhada com cuidado, acolhimento e confiança. Por isso, oferecemos cintas modeladoras, pós-operatórias e serviços estéticos desenvolvidos para atender homens e mulheres com qualidade e dedicação.</p><br><p>Mais do que produtos e serviços, buscamos proporcionar bem-estar, valorizando histórias, conquistas e a individualidade de cada cliente.</p>
         </div>
-        <div class="mvv">
-          <article><span>🎯</span><h3>Missão</h3><p>Promover bem-estar, autoestima e qualidade de vida por meio de produtos e serviços que acolhem, cuidam e transformam.</p></article>
-          <article><span>👁️</span><h3>Visão</h3><p>Ser referência no Sudeste em soluções para o corpo, unindo tecnologia, humanização e sustentabilidade.</p></article>
-          <article><span>💎</span><h3>Valores</h3><p>Respeito, empatia, qualidade, segurança, inovação, sustentabilidade e compromisso com resultados.</p></article>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <section id="sustentabilidade">
-      <div class="wrap mix-sustain">
-        <div class="panel dark">
-          <h2>Mix de Marketing</h2>
-          <div class="list">
-            <article><span>🛍️</span><div><strong>Produto</strong><p>Cintas modeladoras, pós-operatórias, modeladores masculinos e serviços estéticos.</p></div></article>
-            <article><span>💜</span><div><strong>Preço</strong><p>Condições acessíveis, pagamento facilitado e percepção de valor pelo atendimento.</p></div></article>
-            <article><span>📦</span><div><strong>Praça</strong><p>Vendas online para o Sudeste e unidade física no Rio de Janeiro.</p></div></article>
-            <article><span>📲</span><div><strong>Promoção</strong><p>Instagram, WhatsApp, conteúdos educativos, atendimento humanizado e campanhas sazonais.</p></div></article>
-          </div>
-        </div>
-        <div class="panel">
-          <h2>Sustentabilidade</h2>
-          <div class="list">
-            <article><span>♻️</span><div><strong>Embalagens recicláveis</strong><p>Uso de embalagens que reduzem impactos ambientais.</p></div></article>
-            <article><span>🌿</span><div><strong>Produtos duráveis</strong><p>Peças resistentes que geram menos descarte e mais economia.</p></div></article>
-            <article><span>📱</span><div><strong>Atendimento digital</strong><p>Menos papel, mais tecnologia e praticidade para o cliente.</p></div></article>
-            <article><span>🤝</span><div><strong>Ação social</strong><p>Apoio a ações que promovem saúde, autoestima e inclusão.</p></div></article>
-          </div>
-          <div class="seal"><div class="seal-badge">CURVECARE<br>ECO<br>CHOICE</div><div><h3>Selo CurveCare Eco Choice</h3><p>Nosso compromisso com o planeta e com as futuras gerações.</p></div></div>
+    <section id="sustentabilidade" style="padding: 80px 5vw; background: linear-gradient(135deg, #f5effd 0%, #edf9f2 100%); position: relative;">
+  <div class="wrap" style="width: min(1180px, 100%); margin: 0 auto;">
+    
+    <h2 class="title" style="margin-bottom: 10px; font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #2a1739;">Sustentabilidade 🌳</h2>
+    
+    <p style="margin-bottom: 35px; color: #74657e; max-width: 800px; line-height: 1.6;">
+      <strong>Na CurveCare, acreditamos que cuidar das pessoas também é cuidar do planeta. Por isso, adotamos práticas sustentáveis que reduzem impactos ambientais e promovem o uso consciente dos recursos naturais.</strong>
+    </p>
+    
+    <div class="infografico-container" style="width: 100%; display: flex; justify-content: center; align-items: center; background: #ffffff; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 40px rgba(140, 73, 230, 0.08); border: 1px solid rgba(140, 73, 230, 0.1); padding: 15px;">
+      <img src="assets/Banner de sustentabilidade.jpg" alt="Práticas Sustentáveis CurveCare" style="width: 100%; height: auto; object-fit: contain; border-radius: 14px;">
+    </div>
+
+  </div>
+</section>
         </div>
       </div>
     </section>
@@ -196,6 +238,11 @@
     </div>
     <div class="copy"><span>© 2026 CurveCare. Todos os direitos reservados.</span><span>Desenvolvido com carinho para valorizar histórias.</span></div>
   </footer>
-  <a class="float-whats" href="https://wa.me/5521999999999" target="_blank" aria-label="WhatsApp">☘</a>
+  <a href="https://wa.me/5521999999999" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+    <img src="https://cdn-icons-png.flaticon.com/128/3670/3670051.png" alt="WhatsApp" style="width: 100%; height: auto;">
+  </a>
+    <a class="float-insta" href="https://www.instagram.com/curvcare?igsh=MTYxaGp0bmI5YmZnaw==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+      <img src="assets/icons8-instagram-48.png" alt="Instagram" style="width: 100%; height: auto; display: block;"> 
+  </a> 
 </body>
 </html>

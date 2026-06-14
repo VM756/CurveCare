@@ -55,6 +55,12 @@
     footer{background:#130e1c;color:#d9cde4;padding:46px 5vw 20px;margin-top:60px}
     .foot{width:min(1180px,100%);margin:auto;display:grid;grid-template-columns:1.3fr 1fr 1fr 1.2fr;gap:30px}
     .foot h4{color:#fff;margin-bottom:12px}
+    .foot a {
+      display: block;
+      margin-bottom: 8px;
+      color: inherit;
+      text-decoration: none;
+    }
 
     @media(max-width:1050px){.prod-grid{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:680px){.prod-grid{grid-template-columns:1fr}.foot{grid-template-columns:1fr}}
@@ -103,7 +109,6 @@
           </div>
         </div>
 
-        <!-- Onde o JS vai desenhar os produtos -->
         <div class="prod-grid" id="grid-produtos-dinamico"></div>
       </div>
     </section>
@@ -178,7 +183,7 @@
         const bateCat = cat === "todos" || prod.categoria === cat;
         const batePreco = prod.preco <= precoMax;
         
-        const bateTam = tam === "todos" || prod.tamanhos.includes(tam);
+        const bateTam = tam === "todos" || prod.tamanho.includes(tam);
 
         return bateCat && bateTam && batePreco;
       });
