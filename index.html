@@ -41,7 +41,6 @@
 
     .services{background:linear-gradient(180deg,#fff,#fbf7ff 70%,#fff)}.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}.svc{background:#fff;border:1px solid var(--linha);border-radius:24px;overflow:hidden;box-shadow:0 18px 44px rgba(37,27,49,.09);transition:.25s}.svc:hover{transform:translateY(-6px);box-shadow:var(--shadow)}.svc img{height:175px;width:100%;object-fit:cover}.svc div{padding:22px}.svc h3{font-size:1.18rem;color:#301b42;margin-bottom:8px}.svc p{font-size:.92rem;color:var(--muted)}
 
-    .about{background:linear-gradient(135deg,#17131f 0%,#2a1739 52%,#8c49e6 160%);color:#fff;position:relative;overflow:hidden}.about:before{content:"";position:absolute;inset:-30%;background:radial-gradient(circle at 18% 10%,rgba(140,73,230,.5),transparent 28%),radial-gradient(circle at 90% 70%,rgba(234,214,255,.18),transparent 30%)}.about .wrap{position:relative;z-index:2;display:flex;flex-direction: column;align-items: center;text-align: center;max-width: 800px;margin: 0 auto;}.about .eyebrow,.about .title{text-align:center}.about .title{color:#fff}.about p{color:#e7dcf0}.mvv{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.mvv article{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:22px;backdrop-filter:blur(12px)}.mvv span{font-size:2rem}.mvv h3{margin:12px 0 8px;color:#fff}.mvv p{font-size:.9rem;color:#e9ddf2}
 
     .team{background:linear-gradient(180deg,#fff,#f8f0ff)}.team-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:18px}.person{text-align:center;background:#fff;border:1px solid var(--linha);border-radius:24px;padding:14px 12px 18px;box-shadow:0 14px 34px rgba(37,27,49,.08);transition:.25s}.person:hover{transform:translateY(-5px)}.person img{width:100%;aspect-ratio:1/1.15;object-fit:cover;border-radius:18px;margin-bottom:14px;object-position:center top}.person h3{font-size:.94rem;color:#2a1739;line-height:1.18}.person p{font-size:.78rem;color:var(--roxo2);font-weight:800;margin-top:5px}
 
@@ -104,6 +103,93 @@
 
 .whatsapp-float:hover {
   transform: scale(1.1); 
+}
+.about {
+  padding: 80px 0;
+  background-color: #fdfbfd; 
+  border-bottom: 1px solid var(--linha);
+}
+
+.about .wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px; 
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.about .eyebrow {
+  font-size: .85rem;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  color: var(--roxo);
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+
+.about .title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  color: #28133b;
+  margin-bottom: 24px;
+  text-transform: capitalize;
+}
+
+.about p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #554860;
+  margin-bottom: 16px; 
+}
+
+.mvv {
+  background: #ffffff;
+  border: 1px solid var(--linha);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: var(--shadow);
+}
+
+.mvv h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  color: var(--roxo2);
+  margin-bottom: 24px;
+  border-bottom: 2px solid var(--lilas);
+  padding-bottom: 12px;
+}
+
+.mvv p {
+  font-size: 0.98rem;
+  margin-bottom: 20px;
+  color: #4a3b56;
+}
+
+ 
+.mvv strong {
+  color: var(--roxo);
+  font-weight: 800;
+  display: inline-block;
+  margin-right: 4px;
+}
+
+@media (max-width: 992px) {
+  .about {
+    padding: 60px 0;
+  }
+  .about .wrap {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .about .title {
+    font-size: 2rem;
+  }
+  .mvv {
+    padding: 28px;
+  }
 }
 
     @media(max-width:1050px){nav{display:none}.menu{display:block}.header.open nav{display:flex;position:absolute;top:86px;left:5vw;right:5vw;background:#fff;border:1px solid var(--linha);border-radius:22px;box-shadow:var(--shadow);padding:22px;flex-direction:column;align-items:flex-start}.hero-content{grid-template-columns:1fr}.quick,.svc-grid{grid-template-columns:repeat(2,1fr)}.prod-grid,.about .wrap,.mix-sustain,.contact-box{grid-template-columns:1fr}.team-grid{grid-template-columns:repeat(4,1fr)}}
@@ -176,16 +262,27 @@
           <h2 class="title">cuidando das curvas, valorizando histórias.</h2>
           <p>A CurveCare nasceu do desejo de suas sócias de oferecer mais conforto, autoestima e segurança para pessoas que buscam se sentir bem consigo mesmas em todas as etapas de sua jornada.</p><br><p>Acreditamos que cada transformação é única e merece ser acompanhada com cuidado, acolhimento e confiança. Por isso, oferecemos cintas modeladoras, pós-operatórias e serviços estéticos desenvolvidos para atender homens e mulheres com qualidade e dedicação.</p><br><p>Mais do que produtos e serviços, buscamos proporcionar bem-estar, valorizando histórias, conquistas e a individualidade de cada cliente.</p>
         </div>
-        </section>
+        <div class="mvv">
+          <article><h3><strong>Nossa Missão, Visão e Valores</strong></h3></article><p><strong>Missão:</strong> Promover saúde, bem-estar e qualidade de vida por meio de atendimentos humanizados, éticos e personalizados, oferecendo soluções que valorizam a autoestima, o cuidado integral e a confiança de cada paciente.</p>
+          <p><strong>Visão:</strong>Ser reconhecida como referência em cuidados de saúde e bem-estar, destacando-se pela excelência no atendimento, inovação nos serviços e compromisso com a satisfação e qualidade de vida dos pacientes</p>
+          <p><strong>Valores:</strong></p>
+  <ul style="list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;">
+    <li style="background: var(--lilas); color: var(--roxo2); padding: 6px 14px; border-radius: 50px; font-size: 0.88rem; font-weight: 700;">Trabalho em Equipe</li>
+    <li style="background: var(--lilas); color: var(--roxo2); padding: 6px 14px; border-radius: 50px; font-size: 0.88rem; font-weight: 700;">Agilidade</li>
+    <li style="background: var(--lilas); color: var(--roxo2); padding: 6px 14px; border-radius: 50px; font-size: 0.88rem; font-weight: 700;">Foco no Cliente</li>
+    <li style="background: var(--lilas); color: var(--roxo2); padding: 6px 14px; border-radius: 50px; font-size: 0.88rem; font-weight: 700;">Crescimento com Eficiência</li>
+    <li style="background: var(--lilas); color: var(--roxo2); padding: 6px 14px; border-radius: 50px; font-size: 0.88rem; font-weight: 700;">Integridade</li>
+    <li style="background: var(--lilas); color: var(--roxo2); padding: 6px 14px; border-radius: 50px; font-size: 0.88rem; font-weight: 700;">Credibilidade</li>
+  </ul>
+</div>
+       </section>
 
     <section id="sustentabilidade" style="padding: 80px 5vw; background: linear-gradient(135deg, #f5effd 0%, #edf9f2 100%); position: relative;">
   <div class="wrap" style="width: min(1180px, 100%); margin: 0 auto;">
     
-    <h2 class="title" style="margin-bottom: 10px; font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #2a1739;">Sustentabilidade 🌳</h2>
+    <h2 class="title" style="margin-bottom: 10px; font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #2a1739;">Sustentabilidade</h2>
     
-    <p style="margin-bottom: 35px; color: #74657e; max-width: 800px; line-height: 1.6;">
-      <strong>Na CurveCare, acreditamos que cuidar das pessoas também é cuidar do planeta. Por isso, adotamos práticas sustentáveis que reduzem impactos ambientais e promovem o uso consciente dos recursos naturais.</strong>
-    </p>
+    <p style="margin-bottom: 35px; color: #74657e; max-width: 800px; line-height: 1.6;"></p>
     
     <div class="infografico-container" style="width: 100%; display: flex; justify-content: center; align-items: center; background: #ffffff; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 40px rgba(140, 73, 230, 0.08); border: 1px solid rgba(140, 73, 230, 0.1); padding: 15px;">
       <img src="assets/Banner de sustentabilidade.jpg" alt="Práticas Sustentáveis CurveCare" style="width: 100%; height: auto; object-fit: contain; border-radius: 14px;">
@@ -241,7 +338,7 @@
   <a href="https://wa.me/5521999999999" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
     <img src="https://cdn-icons-png.flaticon.com/128/3670/3670051.png" alt="WhatsApp" style="width: 100%; height: auto;">
   </a>
-    <a class="float-insta" href="https://www.instagram.com/curvcare?igsh=MTYxaGp0bmI5YmZnaw==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+    <a class="float-insta" href="https://www.instagram.com/curvcare/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
       <img src="assets/icons8-instagram-48.png" alt="Instagram" style="width: 100%; height: auto; display: block;"> 
   </a> 
 </body>
