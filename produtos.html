@@ -81,7 +81,6 @@
       <div class="wrap">
         <h1 class="title">Nosso Catálogo</h1>
         
-        <!-- Filtros -->
         <div class="filtros-container">
           <div class="filtro-item">
             <label for="filtro-categoria">Categoria:</label>
@@ -103,10 +102,6 @@
               <option value="PP">PP</option>
             </select>
           </div>
-          <div class="filtro-item">
-            <label for="filtro-preco">Preço Máximo: R$ <span id="val-preco">350</span></label>
-            <input type="range" id="filtro-preco" min="240" max="350" value="300" step="10">
-          </div>
         </div>
 
         <div class="prod-grid" id="grid-produtos-dinamico"></div>
@@ -124,7 +119,6 @@
   </footer>
 
   <script>
-    //produtos cadastrados
     const listaProdutos = [
       { id: 1, nome: "Cinta Modeladora", categoria: "feminina", tamanho: ["P","PP","M", "G"], preco: 325.00, imagens: ["assets/cintamodeladora.jpeg", "assets/cintamodeladorabege.jpeg", "assets/modelo fem.jpeg"], imgAtual: 0 },
       { id: 2, nome: "Colete Modelador Postural", categoria: "masculina", tamanho: ["M", "G", "GG"], preco: 349.00, imagens: ["assets/camisacompreMasculina.jpeg", "assets/modeloHomecompress.jpeg"], imgAtual: 0 },
@@ -134,7 +128,6 @@
     const gridProdutos = document.getElementById("grid-produtos-dinamico");
     const filtroCategoria = document.getElementById("filtro-categoria");
     const filtroTamanho = document.getElementById("filtro-tamanho");
-    const filtroPreco = document.getElementById("filtro-preco");
     const valPrecoLabel = document.getElementById("val-preco");
 
     function renderizarProdutos(produtosParaExibir) {
@@ -176,16 +169,13 @@
    function aplicarFiltros() {
       const cat = filtroCategoria.value;
       const tam = filtroTamanho.value;
-      const precoMax = parseFloat(filtroPreco.value);
-      valPrecoLabel.textContent = precoMax;
 
       const filtrados = listaProdutos.filter(prod => {
         const bateCat = cat === "todos" || prod.categoria === cat;
-        const batePreco = prod.preco <= precoMax;
         
         const bateTam = tam === "todos" || prod.tamanho.includes(tam);
 
-        return bateCat && bateTam && batePreco;
+        return bateCat && bateTam;
       });
       
       renderizarProdutos(filtrados);
@@ -193,7 +183,6 @@
 
     filtroCategoria.addEventListener("change", aplicarFiltros);
     filtroTamanho.addEventListener("change", aplicarFiltros);
-    filtroPreco.addEventListener("input", aplicarFiltros);
 
     // Inteligência para abrir já na categoria selecionada na página inicial
     const params = new URLSearchParams(window.location.search);
